@@ -1,0 +1,322 @@
+@use './portfolio' as *;
+@use './services' as *;
+@use './about' as *;
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: "Roboto", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+
+   
+
+   .btn {
+      background-color: #ffc800;
+      color: white;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 20px 30px;
+      text-transform: uppercase;
+      border-radius: 10px;
+      transition: background-color .3s ease;
+      cursor: pointer;
+
+      
+      &:hover {
+         background-color: #e0b000;
+      }
+   }
+}
+
+
+// ------------------------
+// ---- HEADER SECTION ----
+// ------------------------
+
+.header-section {
+   width: 100%;
+   text-align: center;
+   padding: 40px 10px;
+
+   h2 {
+      font-size: 30px;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+   }
+
+   p {
+      color: rgb(150, 150, 150);
+      font-size: 14px;
+      font-style: italic;
+   }
+}
+
+// --------------------
+// ---- NAVIGATION ----
+// --------------------
+
+.nav {
+   position: fixed;
+   width: 100%;
+   top: 0;
+   background-color: #212529;
+   z-index: 999;
+   
+   .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .logo {
+         a {
+            font-family: "VT323", monospace;
+            font-size: 18px;
+            color: #ffc800;
+         }
+      }
+   
+      .burger {
+         button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgb(150, 150, 150);
+            border-radius: 5px;
+            font-size: 12px;
+            padding: 5px 10px;
+            background: none;
+            color: rgb(150, 150, 150);
+            // display: none;
+         }
+      }
+   
+      .menu {
+         display: flex;
+         display: none;
+         gap: 20px;
+
+         a {
+            position: relative;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            transition: color .4s;
+            padding-bottom: 5px;
+            overflow: hidden;
+
+            &::before {
+               content: '';
+               position: absolute;
+               left: 50%;
+               bottom: 0;
+               width: 0;
+               height: 2px;
+               background-color: #ffc800;
+               transition: width .4s;
+            }
+            &::after {
+               content: '';
+               position: absolute;
+               right: 50%;
+               bottom: 0;
+               width: 0;
+               height: 2px;
+               background-color: #ffc800;
+               transition: width .3s;
+            }
+
+            &:hover {
+               color: #e0b000;
+            }
+
+            &:hover::before { 
+               width: 100%; 
+            }
+            &:hover::after { 
+               width: 100%; 
+            }
+         }
+      }
+   }
+}
+
+// ----------------
+// ---- HEADER ----
+// ----------------
+.header {
+   position: relative;
+   height: 100vh;
+   background-image: url("../img/bg_small.jpg");
+   background-position: center;
+   background-size: cover;
+   color: white;
+
+   &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+   }
+   
+   .content {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      
+      h4 {
+         font-size: 20px;
+         font-style: italic;
+         font-weight: 300;
+         padding: 0 20px;
+         text-align: center;
+      }
+      
+      h1 {
+         font-size: 38px;
+         font-weight: 700;
+         padding: 10px 20px;
+         text-transform: uppercase;
+         text-align: center;
+      }
+
+      button {
+         margin-top: 20px;
+      }
+   }
+}
+
+// ------------------
+// ---- SERVICES ----
+// ------------------
+
+
+
+
+
+// ----------------
+// ---- MEDIA  ----
+// ----------------
+
+@media (min-width: 650px) {
+   // ---- HEADER ----
+   .header {
+      height: 60vh;
+      background-image: url("../img/bg_medium.jpg");
+      
+      .content {
+         
+         h4 {
+            font-size: 30px;
+         }
+         
+         h1 {
+            font-size: 58px;
+         }
+      }
+   }
+
+   .nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: #212529;
+      z-index: 999;
+      
+      .wrapper {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 15px;
+         max-width: 1200px;
+         margin: 0 auto;
+   
+         .logo {
+            a {
+               font-family: "VT323", monospace;
+               font-size: 24px;
+               color: #ffc800;
+            }
+         }
+      
+         .burger {
+            display: none;
+         }
+      
+         .menu {
+            // display: none;
+            display: flex;
+            gap: 20px;
+   
+            a {
+               position: relative;
+               color: white;
+               text-transform: uppercase;
+               letter-spacing: 0.8px;
+               cursor: pointer;
+               transition: color .4s;
+               padding-bottom: 5px;
+               overflow: hidden;
+   
+               &::before {
+                  content: '';
+                  position: absolute;
+                  left: 50%;
+                  bottom: 0;
+                  width: 0;
+                  height: 2px;
+                  background-color: #ffc800;
+                  transition: width .4s;
+               }
+               &::after {
+                  content: '';
+                  position: absolute;
+                  right: 50%;
+                  bottom: 0;
+                  width: 0;
+                  height: 2px;
+                  background-color: #ffc800;
+                  transition: width .3s;
+               }
+   
+               &:hover {
+                  color: #e0b000;
+               }
+   
+               &:hover::before { 
+                  width: 100%; 
+               }
+               &:hover::after { 
+                  width: 100%; 
+               }
+            }
+         }
+      }
+   }
+
+   // SERVICES 
+   .services {
+      .wrapper {
+         .list {
+            flex-direction: row;
+         }
+      }
+   }
+}
