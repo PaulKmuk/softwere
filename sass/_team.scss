@@ -10,7 +10,7 @@
       .list {
          display: flex;
          flex-direction: column;
-         gap: 20px;
+         gap: 40px;
          padding-bottom: 20px;
 
          .item {
@@ -34,7 +34,8 @@
                   height: 140px;
                   overflow: hidden;
                   border-radius: 50%;
-                  background-color: rgb(245, 245, 245);
+                  background-color: #fff;
+                  box-shadow: inset 0px 0px 26px 0px rgb(57, 60, 95);
 
                   img {
                      width: 100%;
@@ -59,7 +60,7 @@
             .social {
                display: flex;
                gap: 10px;
-               padding-top: 6px;
+               padding-top: 20px;
 
                .icon-wrapper {
                   background-color: black;
@@ -69,10 +70,74 @@
                   display: flex;
                   justify-content: center;
                   align-items: center;
+                  cursor: pointer;
+                  transition: transform .4s;
+
+                  &:hover {
+                     transform: translateY(-5px);
+                     background-color: rgb(50, 50, 50);
+                  }
 
                   i {
                      color: white;
                   }
+               }
+            }
+         }
+      }
+
+      p {
+         text-align: center;
+         color: gray;
+         padding: 10px;
+      }
+   }
+}
+
+
+@media (min-width: 600px) {
+   .team {
+   
+      .wrapper {
+   
+         .list {
+            flex-direction: row;
+            padding-bottom: 40px;
+         }
+   
+         p {
+            font-size: 14px;
+         }
+      }
+   }
+}
+
+
+@media (min-width: 900px) {
+   .team {
+   
+      .wrapper {
+   
+         .list {
+   
+            .item {
+   
+               .img-border {
+                  width: 200px;
+                  height: 200px;
+                  
+                  .img {
+                     width: 190px;
+                     height: 190px;
+                  }
+               }
+   
+               h4 {
+                  font-size: 20px;
+               }
+   
+               p {
+                  font-size: 16px;
                }
             }
          }
