@@ -3,6 +3,7 @@
 @use './about' as *;
 @use './team' as *;
 @use './contact' as *;
+@use './modal' as *;
 
 * {
    box-sizing: border-box;
@@ -23,7 +24,7 @@ body {
       border: none;
       font-size: 14px;
       font-weight: 600;
-      padding: 20px 30px;
+      padding: 15px 25px;
       text-transform: uppercase;
       border-radius: 10px;
       transition: background-color .3s ease;
