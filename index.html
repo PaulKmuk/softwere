@@ -17,26 +17,35 @@
    <nav class="nav">
       <div class="wrapper">
          <div class="logo">
-            <a>Softwere|House</a>
+            <a href="#header">Softwere|House</a>
          </div>
-         <div class="burger">
+         <div class="burger" id="burger">
             <button>
                Menu 
                <i class="fa-solid fa-bars"></i>
             </button>
          </div>
          <div class="menu">
-            <a>services</a>
-            <a>portfolio</a>
-            <a>about</a>
-            <a>team</a>
-            <a>contact</a>
+            <a href="#services">services</a>
+            <a href="#portfolio">portfolio</a>
+            <a href="#about">about</a>
+            <a href="#team">team</a>
+            <a href="#contact">contact</a>
+         </div>
+      </div>
+      <div class="small-devices" id="smallDevices">
+         <div class="menu">
+            <a href="#services">services</a>
+            <a href="#portfolio">portfolio</a>
+            <a href="#about">about</a>
+            <a href="#team">team</a>
+            <a href="#contact">contact</a>
          </div>
       </div>
    </nav>
    
    <!-- HEADER  -->
-   <header class="header">
+   <header class="header" id="header">
       <div class="content">
          <h4>Welcom To Our Studio!</h4>
          <h1>It's nice to meet you</h1>
@@ -45,7 +54,7 @@
    </header>
    
    <!-- SERVICE  -->
-   <section class="services">
+   <section class="services" id="services">
       <div class="wrapper">
          <div class="header-section">
             <h2 class="title">Services</h2>
@@ -77,7 +86,7 @@
       </div>
    </section>
 
-   <section class="portfolio">
+   <section class="portfolio" id="portfolio">
       <div class="wrapper">
          <div class="header-section">
             <h2 class="title">Porfolio</h2>
@@ -162,7 +171,7 @@
       </div>
    </section>
 
-   <section class="about">
+   <section class="about" id="about">
       <div class="wrapper">
          <div class="header-section">
             <h2 class="title">About</h2>
@@ -373,6 +382,6 @@
    </div>
 
 
-   <script src="./script.js"></script>
+   <script type="module" src="./script.js"></script>
 </body>
 </html>

@@ -1,3 +1,183 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #212529;
+  z-index: 999;
+}
+.nav .small-devices {
+  padding: 20px;
+  display: none;
+  background-color: #212529;
+}
+.nav .small-devices .menu {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  font-size: 18px;
+  font-weight: 600;
+  gap: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: end;
+  padding-right: 10px;
+}
+.nav .small-devices .menu a {
+  border-bottom: 1px solid gray;
+  text-decoration: none;
+  color: gray;
+}
+.nav .show-menu {
+  display: block;
+  animation: slideMenu 0.8s;
+}
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav .wrapper .logo a {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  color: #ffc800;
+  text-decoration: none;
+}
+.nav .wrapper .burger button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: none;
+  color: rgb(150, 150, 150);
+}
+.nav .wrapper .menu {
+  display: flex;
+  display: none;
+  gap: 20px;
+}
+.nav .wrapper .menu a {
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: color 0.4s;
+  padding-bottom: 5px;
+  overflow: hidden;
+  text-decoration: none;
+}
+.nav .wrapper .menu a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffc800;
+  transition: width 0.4s;
+}
+.nav .wrapper .menu a::after {
+  content: "";
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffc800;
+  transition: width 0.3s;
+}
+.nav .wrapper .menu a:hover {
+  color: #e0b000;
+}
+.nav .wrapper .menu a:hover::before {
+  width: 100%;
+}
+.nav .wrapper .menu a:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 650px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #212529;
+    z-index: 999;
+  }
+  .nav .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .nav .wrapper .logo a {
+    font-family: "VT323", monospace;
+    font-size: 24px;
+    color: #ffc800;
+  }
+  .nav .wrapper .burger {
+    display: none;
+  }
+  .nav .wrapper .menu {
+    display: flex;
+    gap: 20px;
+  }
+  .nav .wrapper .menu a {
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: color 0.4s;
+    padding-bottom: 5px;
+    overflow: hidden;
+  }
+  .nav .wrapper .menu a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffc800;
+    transition: width 0.4s;
+  }
+  .nav .wrapper .menu a::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffc800;
+    transition: width 0.3s;
+  }
+  .nav .wrapper .menu a:hover {
+    color: #e0b000;
+  }
+  .nav .wrapper .menu a:hover::before {
+    width: 100%;
+  }
+  .nav .wrapper .menu a:hover::after {
+    width: 100%;
+  }
+}
+@keyframes slideMenu {
+  0% {
+    transform: translateX(-400px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .portfolio {
   background-color: rgb(245, 245, 245);
   padding: 10px 10px 50px;
@@ -605,6 +785,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -642,82 +823,6 @@ body .btn:hover {
   color: rgb(150, 150, 150);
   font-size: 14px;
   font-style: italic;
-}
-
-.nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background-color: #212529;
-  z-index: 999;
-}
-.nav .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.nav .wrapper .logo a {
-  font-family: "VT323", monospace;
-  font-size: 18px;
-  color: #ffc800;
-}
-.nav .wrapper .burger button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: 1px solid rgb(150, 150, 150);
-  border-radius: 5px;
-  font-size: 12px;
-  padding: 5px 10px;
-  background: none;
-  color: rgb(150, 150, 150);
-}
-.nav .wrapper .menu {
-  display: flex;
-  display: none;
-  gap: 20px;
-}
-.nav .wrapper .menu a {
-  position: relative;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  cursor: pointer;
-  transition: color 0.4s;
-  padding-bottom: 5px;
-  overflow: hidden;
-}
-.nav .wrapper .menu a::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffc800;
-  transition: width 0.4s;
-}
-.nav .wrapper .menu a::after {
-  content: "";
-  position: absolute;
-  right: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffc800;
-  transition: width 0.3s;
-}
-.nav .wrapper .menu a:hover {
-  color: #e0b000;
-}
-.nav .wrapper .menu a:hover::before {
-  width: 100%;
-}
-.nav .wrapper .menu a:hover::after {
-  width: 100%;
 }
 
 .header {
@@ -775,72 +880,6 @@ body .btn:hover {
   }
   .header .content h1 {
     font-size: 58px;
-  }
-  .nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color: #212529;
-    z-index: 999;
-  }
-  .nav .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .nav .wrapper .logo a {
-    font-family: "VT323", monospace;
-    font-size: 24px;
-    color: #ffc800;
-  }
-  .nav .wrapper .burger {
-    display: none;
-  }
-  .nav .wrapper .menu {
-    display: flex;
-    gap: 20px;
-  }
-  .nav .wrapper .menu a {
-    position: relative;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    cursor: pointer;
-    transition: color 0.4s;
-    padding-bottom: 5px;
-    overflow: hidden;
-  }
-  .nav .wrapper .menu a::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffc800;
-    transition: width 0.4s;
-  }
-  .nav .wrapper .menu a::after {
-    content: "";
-    position: absolute;
-    right: 50%;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffc800;
-    transition: width 0.3s;
-  }
-  .nav .wrapper .menu a:hover {
-    color: #e0b000;
-  }
-  .nav .wrapper .menu a:hover::before {
-    width: 100%;
-  }
-  .nav .wrapper .menu a:hover::after {
-    width: 100%;
   }
   .services .wrapper .list {
     flex-direction: row;

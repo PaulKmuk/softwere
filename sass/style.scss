@@ -1,3 +1,4 @@
+@use './nav' as *;
 @use './portfolio' as *;
 @use './services' as *;
 @use './about' as *;
@@ -9,6 +10,7 @@
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+   scroll-behavior: smooth;
 }
 
 body {
@@ -60,98 +62,6 @@ body {
    }
 }
 
-// --------------------
-// ---- NAVIGATION ----
-// --------------------
-
-.nav {
-   position: fixed;
-   width: 100%;
-   top: 0;
-   background-color: #212529;
-   z-index: 999;
-   
-   .wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
-      max-width: 1200px;
-      margin: 0 auto;
-
-      .logo {
-         a {
-            font-family: "VT323", monospace;
-            font-size: 18px;
-            color: #ffc800;
-         }
-      }
-   
-      .burger {
-         button {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            border: 1px solid rgb(150, 150, 150);
-            border-radius: 5px;
-            font-size: 12px;
-            padding: 5px 10px;
-            background: none;
-            color: rgb(150, 150, 150);
-            // display: none;
-         }
-      }
-   
-      .menu {
-         display: flex;
-         display: none;
-         gap: 20px;
-
-         a {
-            position: relative;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            cursor: pointer;
-            transition: color .4s;
-            padding-bottom: 5px;
-            overflow: hidden;
-
-            &::before {
-               content: '';
-               position: absolute;
-               left: 50%;
-               bottom: 0;
-               width: 0;
-               height: 2px;
-               background-color: #ffc800;
-               transition: width .4s;
-            }
-            &::after {
-               content: '';
-               position: absolute;
-               right: 50%;
-               bottom: 0;
-               width: 0;
-               height: 2px;
-               background-color: #ffc800;
-               transition: width .3s;
-            }
-
-            &:hover {
-               color: #e0b000;
-            }
-
-            &:hover::before { 
-               width: 100%; 
-            }
-            &:hover::after { 
-               width: 100%; 
-            }
-         }
-      }
-   }
-}
 
 // ----------------
 // ---- HEADER ----
@@ -236,83 +146,6 @@ body {
       }
    }
 
-   .nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background-color: #212529;
-      z-index: 999;
-      
-      .wrapper {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         padding: 15px;
-         max-width: 1200px;
-         margin: 0 auto;
-   
-         .logo {
-            a {
-               font-family: "VT323", monospace;
-               font-size: 24px;
-               color: #ffc800;
-            }
-         }
-      
-         .burger {
-            display: none;
-         }
-      
-         .menu {
-            // display: none;
-            display: flex;
-            gap: 20px;
-   
-            a {
-               position: relative;
-               color: white;
-               text-transform: uppercase;
-               letter-spacing: 0.8px;
-               cursor: pointer;
-               transition: color .4s;
-               padding-bottom: 5px;
-               overflow: hidden;
-   
-               &::before {
-                  content: '';
-                  position: absolute;
-                  left: 50%;
-                  bottom: 0;
-                  width: 0;
-                  height: 2px;
-                  background-color: #ffc800;
-                  transition: width .4s;
-               }
-               &::after {
-                  content: '';
-                  position: absolute;
-                  right: 50%;
-                  bottom: 0;
-                  width: 0;
-                  height: 2px;
-                  background-color: #ffc800;
-                  transition: width .3s;
-               }
-   
-               &:hover {
-                  color: #e0b000;
-               }
-   
-               &:hover::before { 
-                  width: 100%; 
-               }
-               &:hover::after { 
-                  width: 100%; 
-               }
-            }
-         }
-      }
-   }
 
    // SERVICES 
    .services {
